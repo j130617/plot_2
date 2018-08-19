@@ -39,13 +39,13 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
  */ 
 
 // setup x 
-var xValue = function(d) { return d.Score;}, // data -> value
+var xValue = function(d) { return d.Year;}, // data -> value
     xScale = d3.scaleLinear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.axisBottom().scale(xScale);
 
 // setup y
-var yValue = function(d) { return d["Year"];}, // data -> value
+var yValue = function(d) { return d["Score"];}, // data -> value
     yScale = d3.scaleLinear().range([height, 0]), // value -> display
     yMap = function(d) { return yScale(yValue(d));}, // data -> display
     yAxis = d3.axisLeft(yScale);
