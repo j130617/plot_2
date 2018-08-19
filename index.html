@@ -31,7 +31,19 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-/* 
+			var dataset, xScale, yScale;  //Empty, for now
+			//For converting strings to Dates
+			var parseTime = d3.timeParse("%Y");
+			//For converting Dates to strings
+			var formatTime = d3.timeFormat("%b %e");
+			//Function for converting CSV values from strings to Dates and numbers
+			var rowConverter = function(d) {
+				return {
+					Year: parseTime(d.Year),
+					Score: parseInt(d.Score)
+				};
+			}
+			/* 
  * value accessor - returns the value to encode for a given data object.
  * scale - maps value to a visual display encoding, such as a pixel position.
  * map function - maps from data value to display value
